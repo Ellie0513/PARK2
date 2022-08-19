@@ -1,0 +1,307 @@
+/* 白色大標 */
+/* .titleBW{
+    font-size: 25px;
+    font-weight: 900;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 2px 2px #000,
+     -1px -1px #000,
+     1px -1px #000,
+     -1px 1px #000;
+    -webkit-text-stroke: 1px #000;
+} */
+/* 白色小標 */
+.titleSW{
+    font-size: 22px;
+    font-weight: 900;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    -webkit-text-stroke: 1.5px #000;
+}
+/* 綠色小標 */
+.titleSG{
+    font-size: 22px;
+    font-weight: 900;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 1px;
+    color: #ABFF1D;
+    text-shadow: 2px 2px #000;
+    -webkit-text-stroke: 1.5px #000;
+}
+/* 活動綠色大標 */
+.title-block{
+    display: inline-block;
+    margin: 10px 5%;
+    /* position: relative; */
+  }
+.title-block .custom-title{
+    position: absolute;
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 28px;
+    color: #000;
+    -webkit-text-stroke: 5px #000;
+    letter-spacing: 2px;
+    transform: translate(-2px, -2px);
+  }
+.title-block .active-title::before{
+    content: '近期活動';
+    font-size: 28px;
+    position: absolute;
+    -webkit-text-stroke: 1px #000;
+    color: #ABFF1D;
+    letter-spacing: 2px;
+    z-index: 2;
+  }
+.title-block .title-bg{
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 28px;
+    color: #000;
+    -webkit-text-stroke: 5px #000;
+    letter-spacing: 2px;
+}
+/* 活動類別 */
+#activeType{
+    width: 150px;
+    margin: 7px auto;
+    text-align: center;
+}
+/* 類別按鈕 */
+#btnSelect{
+    margin: 0 auto;
+}
+.type-btn{
+    width: 150px;
+    margin: 7px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 1px;
+    background-color: #ddd;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    border-radius: 20px;
+    transition-duration: .5s;
+}
+.type-btn a{
+    color: #000;
+    text-decoration: none;
+}
+.type-btn:hover{
+    box-shadow: none;
+    transform: translate(4px, 4px);
+    transition-duration: .5s;
+}
+.btn-live:hover{
+    background-color: #FD5555;
+}
+.btn-popup:hover{
+    background-color: #5570FD;
+}
+.btn-car:hover{
+    background-color: #FDBA55;
+}
+.btn-market:hover{
+    background-color: #01EFBD;
+}
+.btn-forum:hover{
+    background-color: #EF98F9;
+}
+/* 搜尋按鈕 */
+.btn-search{
+    width: 150px;
+    margin: 7px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 1px;
+    background-color: #fff;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    border-radius: 20px;
+    transition-duration: .5s;
+}
+.btn-search input{
+    width: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 30px;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #999;
+    border: none;
+}
+.btn-search button{
+    background-color: #fff;
+    border: none;
+}
+.btn-search button img{
+    width: 25px;
+}
+/* 行事曆選單 */
+.calendar-btn{
+    display: inline-block;
+    text-align: center;
+}
+.calendar-btn span{
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+/* 活動卡片 */
+#active-card{
+    text-align: center;
+}
+/* 卡片 */
+.card{
+    display: inline-block;
+    margin: 10px;
+    width: 220px;
+    border: 4px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    border-radius: 20px;
+    transition-duration: .5s;
+}
+.card:hover{
+    box-shadow: none;
+    transform: translate(4px, 4px);
+    transition-duration: .5s;
+}
+.card a{
+    display: block;
+    text-decoration: none;
+    text-align: left;
+}
+.card img{
+    height: 150px;
+    border-radius: 20px 20px 0 0;
+}
+.card-info{
+    padding: 5px 10px;
+    height: 120px;
+    border-radius: 0 0 20px 20px;
+    /* background-color: #ddd; */
+}
+.card .card-title{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #000;
+}
+.card .card-text{
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 20px;
+    color: #587F24;
+}
+/* 卡片標籤 */
+.card .triangle-live{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 14px solid;
+    border-color: transparent #FD5555 transparent transparent;
+    transform: translate(99.5px, 1.5px);
+}
+.card .card-label-live{
+    display: inline-block;
+    width: 90px;
+    height: 28px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000;
+    background-color: #FD5555;
+    transform: translate(95px, -9px);
+}
+.card .triangle-popup{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 14px solid;
+    border-color: transparent #5570FD transparent transparent;
+    transform: translate(99.5px, 1.5px);
+}
+.card .card-label-popup{
+    display: inline-block;
+    width: 90px;
+    height: 28px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000;
+    background-color: #5570FD;
+    transform: translate(95px, -9px);
+}
+.card .triangle-car{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 14px solid;
+    border-color: transparent #FDBA55 transparent transparent;
+    transform: translate(99.5px, 1.5px);
+}
+.card .card-label-car{
+    display: inline-block;
+    width: 90px;
+    height: 28px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000;
+    background-color: #FDBA55;
+    transform: translate(95px, -9px);
+}
+.card .triangle-market{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 14px solid;
+    border-color: transparent #01EFBD transparent transparent;
+    transform: translate(99.5px, 1.5px);
+}
+.card .card-label-market{
+    display: inline-block;
+    width: 90px;
+    height: 28px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000;
+    background-color: #01EFBD;
+    transform: translate(95px, -9px);
+}
+.card .triangle-forum{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 14px solid;
+    border-color: transparent #EF98F9 transparent transparent;
+    transform: translate(99.5px, 1.5px);
+}
+.card .card-label-forum{
+    display: inline-block;
+    width: 90px;
+    height: 28px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000;
+    background-color: #EF98F9;
+    transform: translate(95px, -9px);
+}

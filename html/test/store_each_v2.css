@@ -1,0 +1,692 @@
+/* header style */
+.navbar {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    width: 280px;
+}
+
+.navbar .navbar-brand img {
+    height: 20px;
+}
+
+.navbar-collapse {
+    background-color: #000;
+}
+
+.navbar-collapse .navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-item {
+    margin: 0px 5px;
+}
+
+.navbar-toggler {
+    display: flex;
+    position: relative;
+    padding: 4px 0px;
+}
+
+.hamburger {
+    border: solid 2px #fff;
+    position: absolute;
+    width: 100%;
+    transform-origin: center;
+    transition-duration: .5s;
+    opacity: 1;
+}
+
+.hamburger-top {
+    top: 7px;
+}
+
+.hamburger-center {
+    top: 17px;
+}
+
+.hamburger-bottom {
+    top: 27px;
+}
+
+.toggle-top-active {
+    top: 17px;
+    transform: rotate(45deg);
+}
+
+.toggle-center-active {
+    opacity: 0;
+}
+
+.toggle-bottom-active {
+    top: 17px;
+    transform: rotate(-45deg);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 16px;
+    text-align: center;
+    transition-duration: .5s;
+}
+
+.nav-link:hover {
+    color: #ABFF1D;
+}
+
+.dropdown-menu {
+    background-color: #000;
+}
+
+.custom-dropdown {
+    position: absolute;
+    bottom: 0px;
+    transform: translateY(100%);
+    background-color: #000;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.remove-arrow::after {
+    display: none !important;
+}
+
+.custom-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .5s;
+    overflow: hidden;
+}
+
+.custom-container .space {
+    height: 15px;
+}
+
+.custom-item {
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition-duration: .5s;
+    font-weight: 500;
+}
+
+.custom-item:hover {
+    color: #ABFF1D;
+    text-decoration: none;
+}
+
+.right-bar {
+    display: flex;
+}
+
+.social-block {
+    display: flex;
+    align-items: center;
+    margin: 0px 20px;
+}
+
+.social-block svg {
+    height: 20px;
+    margin: 0px 5px;
+}
+
+.social-block svg path {
+    transition-duration: .5s;
+}
+
+.social-block svg:hover>path {
+    fill: #ABFF1D;
+}
+
+.weather-block {
+    display: flex;
+    align-items: center;
+}
+
+.weather-block img {
+    height: 30px;
+    margin: 0px 10px;
+}
+
+.weather-block .temperature {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.open-block {
+    color: #ABFF1D;
+    border: solid 2px #ABFF1D;
+    padding: 0px 7px;
+    border-radius: 5px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1040px) {
+    .navbar .navbar-brand {
+        width: 178px;
+    }
+
+    .right-bar .open-block {
+        display: none;
+    }
+
+    .right-bar .social-block {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar .navbar-brand {
+        width: auto;
+    }
+
+    .right-bar {
+        display: none;
+    }
+
+    .navbar-nav {
+        height: calc(100vh - 56px);
+    }
+
+    .custom-dropdown {
+        display: none;
+    }
+}
+
+/* footer style */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background-color: #000;
+    position: relative;
+    padding: 30px 0px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer h4 {
+    margin: 0;
+    line-height: 27px;
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+footer .top {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    transform: translateY(-100%);
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+
+.footer-left .copyright {
+    color: #ABFF1D;
+    font-size: 12px;
+}
+
+.left-bottom {
+    flex: 1;
+}
+
+.footer-brand {
+    display: flex;
+    flex: 1;
+    margin-bottom: 5px;
+}
+
+.footer-brand img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.footer-brand .brand-name h4 {
+    color: #ABFF1D;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-center ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-center .center-top li {
+    margin: 0px 10px;
+}
+
+.footer-center .center-top a {
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 16px;
+    text-align: center;
+    transition-duration: .5s;
+    text-decoration: none;
+}
+
+.footer-center .center-top a:hover {
+    color: #ABFF1D;
+}
+
+.divider {
+    border-top: solid 2px #fff;
+    width: 100%;
+    margin: 15px 0px;
+}
+
+.footer-center .center-bottom {
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-align: center;
+    transition-duration: .5s;
+}
+
+.footer-center .center-bottom li {
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-center .center-bottom svg {
+    height: 13px;
+}
+
+.footer-right {
+    width: 340px;
+}
+
+footer .rectangle1 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-70%);
+    height: 80px;
+}
+
+footer .rectangle2 {
+    position: absolute;
+    right: 10%;
+    height: 70px;
+    bottom: 0;
+}
+
+@media (max-width: 1320px) {
+    .footer-container {
+        width: 90%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-left {
+        margin-bottom: 30px;
+        padding: 0px 10px;
+    }
+
+    .footer-center {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 940px) {
+    footer {
+        padding: 50px 0px;
+    }
+
+    .footer-container {
+        max-width: 380px;
+    }
+
+    .footer-left {
+        padding: 0px;
+    }
+
+    .footer-center .center-top ul {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .footer-center .center-top ul li {
+        width: 50%;
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+
+    .footer-center .center-bottom ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-center .center-bottom ul li {
+        margin: 0px 0px 10px 0px;
+    }
+
+    .footer-right {
+        height: 0px;
+    }
+}
+
+/* title style */
+.title-block {
+    position: relative;
+    display: inline-block;
+}
+
+.title-block .custom-title {
+    position: absolute;
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #000;
+    -webkit-text-stroke: 5px #000;
+    letter-spacing: 2px;
+    top: 0;
+    left: 0;
+    transform: translate(-2px, -2px);
+}
+
+.title-block .custom-title::before {
+    content: '酉5PM TWCAUDEX';
+    font-size: 28px;
+    position: absolute;
+    -webkit-text-stroke: 1px #000;
+    color: #fff;
+    letter-spacing: 2px;
+    z-index: 2;
+}
+
+.title-block .title-bg {
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #000;
+    -webkit-text-stroke: 5px #000;
+    letter-spacing: 2px;
+}
+
+/* store style */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+} */
+
+.innerText {
+    font-size: 15px;
+    font-weight: 400px;
+}
+
+.mainTitle {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.subTitle {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* .container {
+    display: flex;
+    flex-direction: row;
+} */
+
+.headerHight {
+    min-height: 56px;
+}
+
+/* #leftInfoArea {
+    width: 350px;
+    height: 350px;
+    float: left;
+    justify-content: center;
+    margin-top: 100px;
+
+} */
+
+.rightContentArea {
+    background-color: #F4F4ED;
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 20px; */
+
+    flex-wrap: nowrap;
+
+    align-items: center;
+
+    /* 左邊info固定300px 中間留2.5%的距離 所以右邊設成 100%-2.5%-300px -------------------------------------*/
+    width: calc(97.5% - 300px);
+/* 
+    flex-grow: 1;
+    background-color: lightgray;
+    width: 100%;
+    height: 100%; */
+}
+
+footer {
+    align-items: flex-end;
+}
+
+/* @media (max-width: 991px) {
+    #leftInfoArea {
+        margin: 0 auto;
+        min-width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rightContentArea {
+        min-width: 100%;
+    }
+} */
+
+
+#leftInfo {
+    /*讓圖片出不來 */
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* padding: 0 65px; */
+    background-color: #F2F2F3;
+    border-radius: 15px;
+    height: 80vh;
+    
+
+    /* 固定於畫面左側 ----------------------------------------------------------------------------------------*/
+    overflow-y: scroll;
+    position: fixed;
+    left: 2.5vw;
+    width: 300px;
+    /* 固定於畫面左側 ----------------------------------------------------------------------------------------*/
+
+    /* 寬度設定會讓滾軸不見 */
+    /* width: 30vw; */
+    /* overflow-x: hidden;
+    overflow-y: scroll;
+    white-space: nowrap; */
+    
+}
+
+
+/* 新增的 leftInfo-container css------------------------------------------------------------------------------*/
+.leftInfo-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+/* 新增的 leftInfo-container css------------------------------------------------------------------------------*/
+
+
+.circleImg{
+    width: 100%;
+}
+.circleImg img{
+    width: 100%;
+}
+
+
+.leftInfo div {
+    /* align-self: center; */
+    /* width: 80px; */
+    margin-left: 30px;
+    
+
+}
+
+
+.circleImg {
+    display: inline-flex;
+    /* position: relative; */
+    /* width: 200px; */
+    /* height: 200px; */
+
+    /* info容器300px padding左右各30px 所以改設240px剛好撐滿 ------------------------------------------------------*/
+    width: 240px;
+    height: 240px;
+    /* info容器300px padding左右各30px 所以改設240px剛好撐滿 ------------------------------------------------------*/
+
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: 100px;
+}
+
+.circleImg img {
+    width: auto;
+    height: 100%;
+}
+
+.titleName p {
+    font-weight: 900;
+    font-size: 20px;
+    color: #BCFD55;
+    -webkit-text-stroke: 2px #0E0E0D;
+}
+
+.titleName span,#storeContent {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+}
+
+.bigImg {
+    display: flex;
+    margin: 50px 50px 0 50px;
+    border: 5px solid #000000;
+    box-shadow: 4px 4px 0px 4px #0E0E0D;
+    border-radius: 20px;
+}
+
+.bigImg img {
+    width: 60vw;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 15px;
+    object-fit: cover;
+        /* align-items: center;
+    justify-content: center; */
+
+}
+
+.storeImgGroup {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    /* flex-flow: row wrap; */
+    /* justify-content: space-between; */
+
+}
+
+.storeImg {
+    margin: 0 20px;
+}
+
+.storeImgGroup img {
+    width: 100%;
+}
+
+.storeImgGroup div {
+    padding: 20px 20px 20px 0;
+    object-fit: cover;
+}
+
+.storeIntro {
+    padding: 0 30px 0 30px;
+    margin: 20px;
+}
+
+.storeIntro p,
+.titleName p {
+    margin: 50px 0 30px 0;
+}
+
+.container {
+    width: 100vw;
+    margin-top: 20px;
+    display: flex;
+
+    /* bootstrap 有預設 max-width 要蓋掉他加 important ---------------------------------------------------*/
+    /* flex改成靠右 -------------------------------------------------------------------------------------*/
+    justify-content: flex-end;
+    max-width: 100% !important;
+    padding: 0px 2.5vw;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+      .title-block{
+        position: relative;
+        display: inline-block;
+      }
+      .title-block .custom-title{
+        position: absolute;
+        text-align: center;
+        font-weight: 900;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 28px;
+        letter-spacing: 1px;
+        color: #000;
+        -webkit-text-stroke: 5px #000;
+        letter-spacing: 2px;
+        top: 0;
+        left: 0;
+        transform: translate(-2px, -2px);
+      }
+      .title-block .custom-title::before{
+        content: '關於Park2';
+        font-size: 28px;
+        position: absolute;
+        -webkit-text-stroke: 1px #000;
+        color: #fff;
+        letter-spacing: 2px;
+        z-index: 2;
+      }
+      .title-block .title-bg{
+        text-align: center;
+        font-weight: 900;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 28px;
+        letter-spacing: 1px;
+        color: #000;
+        -webkit-text-stroke: 5px #000;
+        letter-spacing: 2px;
+      }
+    </style>
+</head>
+<body>
+  <div class="title-block">
+    <div class="title-bg">
+      關於Park2
+    </div>
+    <div class="custom-title">
+      關於Park2
+    </div>
+  </div>
+</body>
+</html>

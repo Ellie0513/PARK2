@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    html, body{
+      margin: 0;
+      padding: 0;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .banner-component {
+      position: relative;
+      height: calc(100vh - 126px);
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      font-family: 'Noto Sans TC', sans-serif;
+      overflow: hidden;
+    }
+    .banner-component .slider-outer {
+      overflow: hidden;
+      width: 100%;
+      flex: 1;
+    }
+    .banner-component .slider-outer .slider-container {
+      height: 100%;
+      white-space: nowrap;
+      display: inline-block;
+    }
+    .banner-component .slider-outer .slider-container .slider-item {
+      display: inline-flex;
+      background-color: #000;
+      box-sizing: border-box;
+      /* border: solid 3px #fff; */
+      height: 100%;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .banner-component .slider-outer .slider-container .slider-item .box {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      font-weight: 900;
+      overflow: hidden;
+      position: relative;
+    }
+    .banner-component .slider-outer .slider-container .slider-item .box img{
+      position: absolute;
+      width: 100%;
+      pointer-events: none;
+    }
+    .banner-component .info-card {
+      box-sizing: border-box;
+      position: absolute;
+      bottom: 130px;
+      right: 130px;
+      transition-duration: .5s;
+      transform: rotate(-5deg);
+      padding: 35px;
+    }
+    .banner-component .info-card .bg{
+      position: absolute;
+      height: 160%;
+      z-index: 9;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .banner-component .info-card .bg img{
+      min-width: 100%;
+      min-height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .banner-component .info-card .info {
+      position: relative;
+      text-align: center;
+      z-index: 100;
+      color: #fff;
+    }
+    .banner-component .info-card .info .name{
+      font-size: 28px;
+      font-weight: 700;
+      color: #ABFF1D;
+    }
+    .banner-component .info-card .info .date{
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+    .banner-component .info-card .info .time{
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+    .banner-component .info-card .info p{
+      margin: 0;
+    }
+    .slider-index{
+      height: 60px;
+      width: 100%;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 20px;
+      box-sizing: border-box;
+    }
+    .slider-index .index{
+      flex: 1;
+      height: 12px;
+      background-color: #f4f4f4;
+      margin: 10px;
+      border-radius: 3px;
+      transition-duration: .5s;
+    }
+    .slider-index .index:hover{
+      background-color: #ABFF1D;
+    }
+    /* .banner-component .space{
+      height: 30px;
+      width: 100%;
+      background-color: #000;
+    } */
+    .carousel-active{
+      background-color: #ABFF1D !important;
+    }
+
+    @media(max-width: 950px) {
+      .banner-component {
+        height: 97vw;
+        background-color: #000;
+      }
+      .banner-component .info-card {
+        right: 50vw;
+        transform: translateX(50%) rotate(-5deg);
+        padding: 40px;
+      }
+      .banner-component .slider-outer .slider-container{
+        height: 70vw;
+      }
+    }
+
+    @media(max-width: 720px) {
+      .banner-component {
+        height: 110vw;
+      }
+      .banner-component .info-card {
+        padding: 20px;
+      }
+      .banner-component .info-card .info .name{
+        font-size: 22px;
+      }
+      .banner-component .info-card .info .date{
+        font-size: 16px;
+      }
+      .banner-component .info-card .info .time{
+        font-size: 16px;
+      }
+    }
+
+    @media(max-width: 440px) {
+      .banner-component {
+        height: 123vw;
+      }
+      .banner-component .info-card {
+        padding: 20px;
+      }
+      .banner-component .info-card .info {
+        min-width: 330px;
+      }
+      .banner-component .info-card .info .name{
+        font-size: 20px;
+      }
+      .banner-component .info-card .info .date{
+        font-size: 15px;
+      }
+      .banner-component .info-card .info .time{
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 這行要記得拿掉 -->
+  <div class="block" style="height: 56px;width: 100%;background-color: #000;"></div>
+  <!-- 這行要記得拿掉 -->
+  <div class="banner-component">
+    <div class="slider-outer">
+      <div class="slider-container">
+        <div class="slider-item">
+          <div class="box">
+            <img src="" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="bg">
+        <img src="./img/info-card.svg" alt="">
+      </div>
+      <div class="info">
+        <div class="name"></div>
+        <div class="date"></div>
+        <div class="time"></div>
+      </div>
+    </div>
+    <div class="slider-index">
+    </div>
+    <div class="space"></div>
+  </div>
+
+  <!-- 引用 gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    let data = [
+      {
+        img: './img/slides/bg-1.jpeg',
+        text: '我出去一下',
+        date: '2022.06.18 Sat ~ 06.19 Sun',
+        time: '14:00-21:00',
+        href: 'link1'
+      },
+      {
+        img: './img/slides/bg-2.jpeg',
+        text: '植日森',
+        date: '每月第二個星期四',
+        time: '',
+        href: 'link2'
+      },
+      {
+        img: './img/slides/bg-3.jpeg',
+        text: '台中！好像哪裡怪怪的！',
+        date: '2022.05.06 Fri',
+        time: '19:00-21:30',
+        href: 'link3'
+      }
+    ]
+
+    let htmlString = ''
+    for(let i=0; i<data.length; i++){
+      htmlString += `<div class="slider-item" id="${i}"><div class="box"><img src="${data[i].img}"></div></div>`
+    }
+    document.querySelector('.slider-container').innerHTML = htmlString
+
+    document.querySelector('.info .name').innerHTML = `<p>${data[0].text}</p>`
+    document.querySelector('.info .date').innerHTML = `<p>${data[0].date}</p>`
+    document.querySelector('.info .time').innerHTML = `<p>${data[0].time}</p>`
+
+    let indexString = ''
+    for(let i=0; i<data.length; i++){
+      indexString += `<div class="index" id="carousel${i}"></div>`
+    }
+    document.querySelector('.slider-index').innerHTML = indexString
+
+    let count = 0
+    let isMouseDown = false
+    let mouseStart = 0
+    let mouseEnd = 0
+    let num = data.length
+    let displacement = document.querySelector('.slider-item').offsetWidth
+    let target = document.querySelector('.slider-outer')
+    let indexArr = document.querySelectorAll(".index")
+    let carouselLinks = document.querySelectorAll('.slider-item')
+
+    function changeIndexActive(target, index) {
+      indexArr.forEach(j => {
+        j.classList.remove('carousel-active')
+      })
+      count = index;
+      target.classList.add('carousel-active')
+    }
+
+    indexArr.forEach((e, i) => {
+      if(i === 0) {
+        changeIndexActive(e, i);
+      }
+      e.addEventListener('click', ()=>{
+        changeIndexActive(e, i);
+        gsap.to(".slider-container", {
+          duration: 1, 
+          x: -displacement*count,
+          onComplete: function(){
+            document.querySelector('.info .name').innerHTML = `<p>${data[count].text}</p>`
+            document.querySelector('.info .date').innerHTML = `<p>${data[count].date}</p>`
+            document.querySelector('.info .time').innerHTML = `<p>${data[count].time}</p>`
+          }
+        });
+      })
+    })
+
+    function getMousePos(event) {
+      let e = event || window.event;
+      return e.clientX
+    }
+
+    // 取得滑鼠點下位置
+    if(data.length>1){
+      target.addEventListener('mousedown', event => {
+        let moveDistance = 0
+        isMouseDown = true
+        mouseStart = getMousePos()
+      })
+    }
+
+    // 取得滑鼠放開位置
+    document.addEventListener('mouseup', event => {
+      if(isMouseDown) {
+        mouseEnd = getMousePos();
+        if((mouseEnd-mouseStart)<0) {
+          if(count<num-1){
+            count+=1;
+            changeIndexActive(indexArr[count], count);
+            gsap.to(".slider-container", {
+              duration: 1, 
+              x: -displacement*count,
+              onComplete: function(){
+                document.querySelector('.info .name').innerHTML = `<p>${data[count].text}</p>`
+                document.querySelector('.info .date').innerHTML = `<p>${data[count].date}</p>`
+                document.querySelector('.info .time').innerHTML = `<p>${data[count].time}</p>`
+              }
+            });
+          }
+        }
+        else if((mouseEnd-mouseStart)>0){
+          if(count>0){
+            count-=1;
+            changeIndexActive(indexArr[count], count);
+            gsap.to(".slider-container", {
+              duration: 1,
+              x: -displacement*count,
+              onComplete: function(){
+                document.querySelector('.info .name').innerHTML = `<p>${data[count].text}</p>`
+                document.querySelector('.info .date').innerHTML = `<p>${data[count].date}</p>`
+                document.querySelector('.info .time').innerHTML = `<p>${data[count].time}</p>`
+              }
+            });
+          }
+        }
+      }
+    })
+
+    // 點擊連結
+    carouselLinks.forEach((e, i)=>{
+      e.addEventListener('click', j => {
+        if(mouseEnd-mouseStart === 0) {
+          window.location.href(data[i].href);
+          // or
+          // window.open(data[i].href);
+        }
+      })
+    })
+      
+    // 取得滑鼠拖曳距離
+    document.addEventListener('mousemove', e => {
+        if(isMouseDown) {
+          moveDistance = e.x - mouseStart
+          if(count === 0 && moveDistance < 0 ) {
+            gsap.to(".slider-container", {duration: 1, x: moveDistance});
+          }else if(count > 0 && count < num-1 && moveDistance < 0){
+            gsap.to(".slider-container", {duration: 1, x: -displacement*count + moveDistance});
+          }else if(count > 0 && count < num && moveDistance > 0){
+            gsap.to(".slider-container", {duration: 1, x: -displacement*count + moveDistance});
+          }
+        }
+    })
+
+    document.addEventListener('mouseup',event=> {
+      isMouseDown = false
+    })
+  </script>
+</body>
+</html>

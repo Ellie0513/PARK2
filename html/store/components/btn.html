@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    .custom-btn{
+      position: relative;
+      display: inline-flex;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 500;
+    }
+    .front-btn{
+      font-size: 15px;
+      letter-spacing: 1px;
+      border: solid 3px #fff;
+      padding: 7px 20px;
+      border-radius: 30px;
+      margin: 0;
+      background-color: #000;
+      transition-duration: .5s;
+      transform: translate(-5px, -6px);
+      color: #fff;
+      width: auto;
+      text-decoration: none;
+    }
+    .bg{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      bottom: 0px;
+      z-index: -9;
+      border-radius: 30px;
+    }
+    .custom-btn:hover .front-btn{
+      transform: translate(0px, 0px);
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-btn">
+    <div class="bg"></div>
+    <a class="front-btn" href="#">我要申請</a>
+  </div>
+</body>
+</html>

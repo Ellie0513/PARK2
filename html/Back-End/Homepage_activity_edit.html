@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: flexbox;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        .header {
+            /* position: absolute; */
+            min-width: 1398px;
+            min-height: 59px;
+            /* left: 21px;
+            top: 23px; */
+            background-color: #f4f4f4;
+            /* position: fixed; */
+            display: block;
+        }
+
+        .header_hight {
+            min-height: 79px;
+            display: flex;
+        }
+
+        .sidebar {
+            /* position: fixed; */
+            display: flex;
+            width: 203px;
+            min-height: 100vw;
+            margin-top: 10px;
+            /* margin-bottom: 20px; */
+            background-color: #f4f4f4;
+
+        }
+
+        /* -----活動全域----- */
+        .homepage_content {
+            position: fixed;
+            width: 1174px;
+            min-height: calc(100% - 20px);
+            left: 237px;
+            top: 78px;
+            display: flexbox;
+        }
+
+        /* -----字體----- */
+        /* 大標題 */
+        .homepage_title {
+            display: flex;
+            margin: 67px 55px 23px 47px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 900;
+            font-size: 24px;
+        }
+
+        /* 副標題 */
+        .homepage_subtitle p {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* -----活動全域----- */
+        .homepage_activity {
+            margin: 0 100px 100px 100px;
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(auto-fill, 252px);
+            grid-gap: 55px;
+        }
+
+        /* 上傳按鈕 */
+        .activity_upload button {
+            width: 250px;
+            height: 250px;
+            border: #DBDBDB 5px solid;
+            border-color: #DBDBDB
+        }
+
+        .activity_upload svg {
+            width: 63px;
+            height: 63px;
+            color: #DBDBDB;
+        }
+
+        .activity_upload button:hover {
+            box-shadow: none;
+            transform: translate(2px, 2px);
+            transition-duration: .5s;
+        }
+        /* 活動Card */
+        .activity_card {
+            width: 252px;
+            height: 233px;
+        }
+
+        /* Card圖片 */
+        .activity_card_img img {
+            width: 100%;
+            height: 152px;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+        /* Card標題 */
+        .activity_card_name {
+            margin-top: -10px;
+        }
+
+        .activity_card_name a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .activity_card_name a:hover {
+            color: #336699;
+        }
+
+
+        /* Card btn區 */
+        .activity_card_btn {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding: 2px 0;
+            margin-top: -10px;
+        }
+
+        /* hover壓下按鈕 */
+        .activity_card_btn button:hover {
+            box-shadow: none;
+            transform: translate(2px, 2px);
+            transition-duration: .5s;
+        }
+
+        /* button */
+        .activity_card_btn button {
+            width: 60px;
+            height: 21px;
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        /* 字體 */
+        .activity_card_btn div {
+            margin-left: 2px;
+        }
+
+        /* 切換全域 */
+        .show_box {
+            display: flex;
+            justify-content: space-around;
+            width: 110px;
+            font-size: 14px;
+        }
+
+        .show_box div:nth-child(1) {
+            display: block;
+            justify-content: left;
+            margin-right: 40px;
+            align-items: center;
+        }
+
+        .show_box div:nth-child(3) {
+            display: flex;
+            align-items: center;
+        }
+
+        /* 顯示切換 */
+        input[type=checkbox] {
+            visibility: hidden;
+        }
+
+        #show_switch {
+            /* display: block; */
+            width: 34px;
+            height: 13px;
+            background: #B3B3B3;
+            border-radius: 30px;
+            position: absolute;
+            margin: 4px 0 0 0;
+            /* margin-left: -1px; */
+        }
+
+        #show_switch label {
+            /* display: block; */
+            width: 18px;
+            height: 18px;
+            border-radius: 80px;
+            -webkit-transition: all .5s ease;
+            transition: all .5s ease;
+            cursor: pointer;
+            position: absolute;
+            top: -2.5px;
+            left: 1.5vh;
+            z-index: 1;
+            background: #ABFF21;
+        }
+
+        #chkSwitch_01:checked+label,
+        #chkSwitch_02:checked+label,
+        #chkSwitch_03:checked+label,
+        #chkSwitch_04:checked+label,
+        #chkSwitch_05:checked+label,
+        #chkSwitch_06:checked+label,
+        #chkSwitch_07:checked+label {
+            margin-left: -1.7vh;
+            background: lightgray;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- header -->
+        <div class="header"></div>
+        <!-- <div class="header_hight"></div> -->
+        <!-- sidebar -->
+        <div class="sidebar"></div>
+        <!-- content -->
+        <div class="homepage_content">
+            <div class="homepage_title">
+                <p>活動列表</p>
+            </div>
+            <div class="homepage_activity homepage_subtitle">
+                <div class="activity_upload">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
+                        <p>新增活動</p>
+                    </button>
+                </div>
+                <div class="activity_card">
+                    <div class="activity_card_img">
+                        <a href="" target="_blank"><img src="../store/image/store/MOLINO.jpeg" alt=""></a>
+                    </div>
+                    <div class="activity_card_name">
+                        <p><a href="" target="_blank">活動名稱</a></p>
+                    </div>
+                    <div class="activity_card_btn">
+                        <button>
+                            <span>編輯</span>
+                        </button>
+                        <button>
+                            <span>刪除</span>
+                        </button>
+                        <div class="show_box">
+                            <div>顯示</div>
+                            <div id="show_switch">
+                                <input type="checkbox" id="chkSwitch_01" name="chkSwitch">
+                                <label for="chkSwitch_01"></label>
+                            </div>
+                            <div>隱藏</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="activity_card">
+                    <div class="activity_card_img">
+                        <a href="" target="_blank"><img src="../store/image/store/MOLINO.jpeg" alt=""></a>
+                    </div>
+                    <div class="activity_card_name">
+                        <p><a href="" target="_blank">活動名稱</a></p>
+                    </div>
+                    <div class="activity_card_btn">
+                        <button>
+                            <span>編輯</span>
+                        </button>
+                        <button>
+                            <span>刪除</span>
+                        </button>
+                        <div class="show_box">
+                            <div>顯示</div>
+                            <div id="show_switch">
+                                <input type="checkbox" id="chkSwitch_02" name="chkSwitch">
+                                <label for="chkSwitch_02"></label>
+                            </div>
+                            <div>隱藏</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="activity_card">
+                    <div class="activity_card_img">
+                        <a href="" target="_blank"><img src="../store/image/store/MOLINO.jpeg" alt=""></a>
+                    </div>
+                    <div class="activity_card_name">
+                        <p><a href="" target="_blank">活動名稱</a></p>
+                    </div>
+                    <div class="activity_card_btn">
+                        <button>
+                            <span>編輯</span>
+                        </button>
+                        <button>
+                            <span>刪除</span>
+                        </button>
+                        <div class="show_box">
+                            <div>顯示</div>
+                            <div id="show_switch">
+                                <input type="checkbox" id="chkSwitch_03" name="chkSwitch">
+                                <label for="chkSwitch_03"></label>
+                            </div>
+                            <div>隱藏</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="activity_card">
+                    <div class="activity_card_img">
+                        <a href="" target="_blank"><img src="../store/image/store/MOLINO.jpeg" alt=""></a>
+                    </div>
+                    <div class="activity_card_name">
+                        <p><a href="" target="_blank">活動名稱</a></p>
+                    </div>
+                    <div class="activity_card_btn">
+                        <button>
+                            <span>編輯</span>
+                        </button>
+                        <button>
+                            <span>刪除</span>
+                        </button>
+                        <div class="show_box">
+                            <div>顯示</div>
+                            <div id="show_switch">
+                                <input type="checkbox" id="chkSwitch_04" name="chkSwitch">
+                                <label for="chkSwitch_04"></label>
+                            </div>
+                            <div>隱藏</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="activity_card">
+                    <div class="activity_card_img">
+                        <a href="" target="_blank"><img src="../store/image/store/MOLINO.jpeg" alt=""></a>
+                    </div>
+                    <div class="activity_card_name">
+                        <p><a href="" target="_blank">活動名稱</a></p>
+                    </div>
+                    <div class="activity_card_btn">
+                        <button>
+                            <span>編輯</span>
+                        </button>
+                        <button>
+                            <span>刪除</span>
+                        </button>
+                        <div class="show_box">
+                            <div>顯示</div>
+                            <div id="show_switch">
+                                <input type="checkbox" id="chkSwitch_05" name="chkSwitch">
+                                <label for="chkSwitch_05"></label>
+                            </div>
+                            <div>隱藏</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="activity_card">
+                    <div class="activity_card_img">
+                        <a href="" target="_blank"><img src="../store/image/store/MOLINO.jpeg" alt=""></a>
+                    </div>
+                    <div class="activity_card_name">
+                        <p><a href="" target="_blank">活動名稱</a></p>
+                    </div>
+                    <div class="activity_card_btn">
+                        <button>
+                            <span>編輯</span>
+                        </button>
+                        <button>
+                            <span>刪除</span>
+                        </button>
+                        <div class="show_box">
+                            <div>顯示</div>
+                            <div id="show_switch">
+                                <input type="checkbox" id="chkSwitch_06" name="chkSwitch">
+                                <label for="chkSwitch_06"></label>
+                            </div>
+                            <div>隱藏</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="activity_card">
+                    <div class="activity_card_img">
+                        <a href="" target="_blank"><img src="../store/image/store/MOLINO.jpeg" alt=""></a>
+                    </div>
+                    <div class="activity_card_name">
+                        <p><a href="" target="_blank">活動名稱</a></p>
+                    </div>
+                    <div class="activity_card_btn">
+                        <button>
+                            <span>編輯</span>
+                        </button>
+                        <button>
+                            <span>刪除</span>
+                        </button>
+                        <div class="show_box">
+                            <div>顯示</div>
+                            <div id="show_switch">
+                                <input type="checkbox" id="chkSwitch_07" name="chkSwitch">
+                                <label for="chkSwitch_07"></label>
+                            </div>
+                            <div>隱藏</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

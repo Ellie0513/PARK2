@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    .marquee-block{
+      width: 100%;
+      background-color: #000;
+      border-radius: 5px;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .marquee-block .marquee{
+      position: relative;
+      padding: 10px 20px;
+      height: 30px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .marquee-block p{
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: #fff;
+      margin: 0;
+      position: absolute;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+    /* @media (max-width: 900px) {
+      .marquee-block{
+        display: none;
+      }
+    } */
+  </style>
+</head>
+<body>
+  <div class="marquee-block">
+    <div class="marquee">
+      <p>// PARK2，一座大人系非典型公園，探索公園與城市生活的更多可能！ </p>
+    </div>
+  </div>
+  <script>
+    let marqueeText = document.querySelector('.marquee p');
+
+    function getMarqueeWidth () {;
+      return document.querySelector('.marquee').offsetWidth;
+    }
+    let marqueeWidth = getMarqueeWidth();
+
+    function marquee () {
+      marqueeWidth -= 1;
+      marqueeText.style.left = marqueeWidth + 'px';
+      // if (marqueeWidth < marqueeTextWidth * -1) {
+      //   marqueeWidth = getMarqueeWidth();
+      // }
+      let marqueeTextWidth = document.querySelector('.marquee p').offsetWidth;
+      if (marqueeWidth + marqueeTextWidth === getMarqueeWidth()) {
+        addElement ();
+      }
+    }
+    let marqueeEffect = setInterval(marquee, 20);
+
+
+    document.body.onload = addElement;
+    
+    let marqueeContent = '';
+
+    function addElement () {
+      marqueeContent += '// PARK2，一座大人系非典型公園，探索公園與城市生活的更多可能！ '
+      let container = document.querySelector(".marquee p");
+      container.innerText = marqueeContent;
+    }
+  </script>
+</body>
+</html>
